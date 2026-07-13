@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive browser-based SQL dinner-party mystery for the neuefische daily review.">
+  <meta name="author" content="Hari Raj Singh">
+  <title>SQL Dinner-Party Mystery</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <p class="eyebrow">neuefische · SQL Daily Review</p>
+    <h1>🍽️ SQL Dinner-Party Mystery</h1>
+    <p class="subtitle">Explore four related tables, run SQL in your browser, and identify the mystery order.</p>
+    <p class="byline">Created and facilitated by Hari Raj Singh</p>
+  </header>
+
+  <main>
+    <section class="panel intro-panel">
+      <div>
+        <h2>Your mission</h2>
+        <p>Use <code>guests</code>, <code>seats</code>, <code>dishes</code>, and <code>orders</code> to discover who placed the unusual order.</p>
+      </div>
+      <a class="protocol-link" href="https://github.com/neuefische/ds-matcha-transformers-220626-daily-review/blob/main/protocols/2026-07-14_SQL_Daily_Review_Hari.md">Open participant protocol</a>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <p class="step-label">Step 1</p>
+          <h2>Choose a starting query</h2>
+        </div>
+        <p id="database-status" class="status" role="status">Loading the fictional database…</p>
+      </div>
+
+      <div class="example-buttons" aria-label="Example SQL queries">
+        <button type="button" data-query="guests">Explore guests</button>
+        <button type="button" data-query="vegetarian">Vegetarian dishes</button>
+        <button type="button" data-query="seating">Guest seating</button>
+        <button type="button" data-query="popular">Popular dishes</button>
+        <button type="button" data-query="mystery">Mystery query</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <p class="step-label">Step 2</p>
+          <h2>Write and run SQL</h2>
+        </div>
+        <p class="keyboard-tip">Keyboard shortcut: <kbd>Ctrl</kbd>/<kbd>⌘</kbd> + <kbd>Enter</kbd></p>
+      </div>
+
+      <label class="sr-only" for="sql-editor">SQL query editor</label>
+      <textarea id="sql-editor" spellcheck="false" aria-describedby="editor-help">SELECT *
+FROM guests;</textarea>
+      <p id="editor-help" class="helper-text">The database runs locally in this browser. No credentials or external database connection are used.</p>
+
+      <div class="editor-actions">
+        <button id="run-query" class="primary-button" type="button">▶ Run query</button>
+        <button id="reset-query" type="button">Reset example</button>
+        <button id="clear-query" type="button">Clear editor</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <p class="step-label">Step 3</p>
+          <h2>Inspect the result</h2>
+        </div>
+        <p id="result-summary" class="status">Run a query to see results.</p>
+      </div>
+      <div id="error-message" class="error-message" role="alert" hidden></div>
+      <div id="results" class="results-container" aria-live="polite"></div>
+    </section>
+
+    <section class="panel schema-panel">
+      <p class="step-label">Database map</p>
+      <h2>Four related tables</h2>
+      <div id="schema-cards" class="schema-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Fictional educational dataset · SQLite running locally with WebAssembly</p>
+    <p class="footer-credit">Concept, design, and facilitation by Hari Raj Singh</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js"></script>
+  <script src="playground/app.js"></script>
+</body>
+</html>
