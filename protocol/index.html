@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Participant protocol for the interactive SQL Dinner-Party Mystery daily review."
+  >
+  <meta name="author" content="Hari Raj Singh">
+
+  <title>SQL Dinner-Party Mystery · Participant Protocol</title>
+
+  <style>
+    :root {
+      color-scheme: light;
+      --background: #f5f3ef;
+      --surface: #ffffff;
+      --text: #23211f;
+      --muted: #67615b;
+      --border: #ded8d0;
+      --accent: #79522e;
+      --accent-soft: #f0e6da;
+      --code-background: #292724;
+      --code-text: #f8f5ef;
+      --shadow: 0 12px 35px rgba(48, 39, 31, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family:
+        Inter,
+        ui-sans-serif,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .site-header {
+      padding: 2.5rem 1.25rem 2rem;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner,
+    .protocol {
+      width: min(900px, calc(100% - 2rem));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.5rem;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 750;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .site-header h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      line-height: 1.1;
+    }
+
+    .subtitle {
+      max-width: 720px;
+      margin: 1rem 0 1.25rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .back-link:hover,
+    .back-link:focus-visible {
+      text-decoration: underline;
+    }
+
+    .protocol {
+      margin-block: 2rem 4rem;
+      padding: clamp(1.35rem, 4vw, 3rem);
+      overflow-wrap: anywhere;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .loading {
+      color: var(--muted);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      line-height: 1.25;
+      scroll-margin-top: 1rem;
+    }
+
+    .protocol h1 {
+      margin-top: 0;
+    }
+
+    .protocol h2 {
+      margin-top: 2.5rem;
+      padding-bottom: 0.45rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .protocol h3 {
+      margin-top: 2rem;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    code {
+      padding: 0.12rem 0.35rem;
+      background: var(--accent-soft);
+      border-radius: 5px;
+      font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+      font-size: 0.92em;
+    }
+
+    pre {
+      padding: 1rem;
+      overflow-x: auto;
+      background: var(--code-background);
+      color: var(--code-text);
+      border-radius: 10px;
+    }
+
+    pre code {
+      padding: 0;
+      background: transparent;
+      color: inherit;
+    }
+
+    blockquote {
+      margin-inline: 0;
+      padding: 0.1rem 1rem;
+      color: var(--muted);
+      background: #faf7f2;
+      border-left: 4px solid var(--accent);
+    }
+
+    table {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 0.65rem 0.8rem;
+      text-align: left;
+      vertical-align: top;
+      border: 1px solid var(--border);
+    }
+
+    th {
+      background: var(--accent-soft);
+    }
+
+    details {
+      margin-block: 1rem;
+      padding: 0.9rem 1rem;
+      background: #faf7f2;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .error {
+      color: #8b1e1e;
+      white-space: pre-wrap;
+    }
+
+    footer {
+      padding: 0 1rem 3rem;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 16px;
+      }
+
+      .protocol {
+        width: min(100% - 1rem, 900px);
+        border-radius: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="eyebrow">neuefische · SQL Daily Review</p>
+      <h1>Participant Protocol</h1>
+
+      <p class="subtitle">
+        Follow the questions in order. Predict first, discuss the reasoning,
+        and run each SQL query only when invited by the facilitator.
+      </p>
+
+      <a class="back-link" href="../">
+        ← Return to the SQL playground
+      </a>
+    </div>
+  </header>
+
+  <main id="protocol-content" class="protocol">
+    <p class="loading">Loading the participant protocol…</p>
+  </main>
+
+  <footer>
+    <p>SQL Dinner-Party Mystery · Created and facilitated by Hari Raj Singh</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <script>
+    const protocolFile = "./2026-07-14_SQL_Daily_Review_Hari.md";
+    const contentElement = document.getElementById("protocol-content");
+
+    function showRawMarkdown(markdown, message) {
+      contentElement.innerHTML = "";
+
+      if (message) {
+        const warning = document.createElement("p");
+        warning.className = "error";
+        warning.textContent = message;
+        contentElement.appendChild(warning);
+      }
+
+      const pre = document.createElement("pre");
+      pre.textContent = markdown;
+      contentElement.appendChild(pre);
+    }
+
+    fetch(protocolFile)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(
+            `Could not load the protocol (${response.status} ${response.statusText}).`
+          );
+        }
+
+        return response.text();
+      })
+      .then((markdown) => {
+        if (window.marked && typeof window.marked.parse === "function") {
+          contentElement.innerHTML = window.marked.parse(markdown, {
+            gfm: true,
+            breaks: false
+          });
+        } else {
+          showRawMarkdown(
+            markdown,
+            "The formatted reader could not load, so the Markdown is shown below."
+          );
+        }
+      })
+      .catch((error) => {
+        contentElement.innerHTML = "";
+
+        const message = document.createElement("p");
+        message.className = "error";
+        message.textContent =
+          "The participant protocol could not be loaded. " + error.message;
+
+        contentElement.appendChild(message);
+      });
+  </script>
+</body>
+</html>

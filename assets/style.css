@@ -333,3 +333,31 @@ footer {
   font-size: 0.9rem;
   font-weight: 700;
 }
+
+.presenter-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 2px dashed #c49a2f;
+  background: #fffaf0;
+}
+
+.presenter-controls[hidden] {
+  display: none;
+}
+
+#drumroll-button {
+  border-color: #9b6a00;
+  color: #ffffff;
+  background: #9b6a00;
+}
+
+#drumroll-button:hover {
+  background: #805700;
+}
+
+#drumroll-button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}

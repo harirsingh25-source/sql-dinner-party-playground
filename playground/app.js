@@ -265,3 +265,43 @@ editor.addEventListener("keydown", (event) => {
 });
 
 initializeDatabase();
+
+
+// Presenter-only drumroll
+const presenterControls = document.querySelector("#presenter-controls");
+const drumrollButton = document.querySelector("#drumroll-button");
+const presenterMode =
+  new URLSearchParams(window.location.search).get("presenter") === "1";
+
+if (presenterMode && presenterControls) {
+  presenterControls.hidden = false;
+}
+
+const drumrollAudio = new Audio("assets/drumroll.wav");
+drumrollAudio.preload = "auto";
+
+async function playDrumroll() {
+  drumrollButton.disabled = true;
+  drumrollButton.textContent = "🥁 Tabla crescendo playing…";
+
+  drumrollAudio.pause();
+  drumrollAudio.currentTime = 0;
+  drumrollAudio.volume = 1;
+
+  try {
+    await drumrollAudio.play();
+  } catch (error) {
+    drumrollButton.disabled = false;
+    drumrollButton.textContent = "🥁 Play tabla crescendo";
+    alert(`The sound could not be played: ${error.message}`);
+  }
+}
+
+drumrollAudio.addEventListener("ended", () => {
+  drumrollButton.disabled = false;
+  drumrollButton.textContent = "🥁 Play tabla crescendo";
+});
+
+if (drumrollButton) {
+  drumrollButton.addEventListener("click", playDrumroll);
+}
