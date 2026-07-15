@@ -11,7 +11,7 @@
 
 ### Open the browser SQL playground
 
-➡️ **[Launch the Dinner-Party SQL Playground](https://neuefische.github.io/ds-matcha-transformers-220626-daily-review/)**
+➡️ [Launch the Dinner-Party SQL Playground](https://harirsingh25-source.github.io/sql-dinner-party-playground/)
 
 Keep this protocol open in one browser tab and the playground open in another.
 
