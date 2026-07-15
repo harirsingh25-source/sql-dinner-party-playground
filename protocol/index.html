@@ -6,11 +6,11 @@
 
   <meta
     name="description"
-    content="Participant protocol for the interactive SQL Dinner-Party Mystery daily review."
+    content="Evergreen interactive learning guide for the SQL Dinner-Party Mystery."
   >
   <meta name="author" content="Hari Raj Singh">
 
-  <title>SQL Dinner-Party Mystery · Participant Protocol</title>
+  <title>SQL Dinner-Party Mystery · Learning Guide</title>
 
   <style>
     :root {
@@ -237,12 +237,12 @@
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <p class="eyebrow">neuefische · SQL Daily Review</p>
-      <h1>Participant Protocol</h1>
+      <p class="eyebrow">Interactive SQL Learning Experience</p>
+      <h1>SQL Learning Guide</h1>
 
       <p class="subtitle">
-        Follow the questions in order. Predict first, discuss the reasoning,
-        and run each SQL query only when invited by the facilitator.
+        Work through the concepts in order, predict the results, test your
+        SQL in the browser, and reveal hints only when needed.
       </p>
 
       <a class="back-link" href="../">
@@ -252,17 +252,17 @@
   </header>
 
   <main id="protocol-content" class="protocol">
-    <p class="loading">Loading the participant protocol…</p>
+    <p class="loading">Loading the SQL learning guide…</p>
   </main>
 
   <footer>
-    <p>SQL Dinner-Party Mystery · Created and facilitated by Hari Raj Singh</p>
+    <p>SQL Dinner-Party Mystery · Designed and developed by Hari Raj Singh</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
   <script>
-    const protocolFile = "./2026-07-14_SQL_Daily_Review_Hari.md";
+    const protocolFile = "./sql-dinner-party-learning-guide.md";
     const contentElement = document.getElementById("protocol-content");
 
     function showRawMarkdown(markdown, message) {
@@ -309,7 +309,7 @@
         const message = document.createElement("p");
         message.className = "error";
         message.textContent =
-          "The participant protocol could not be loaded. " + error.message;
+          "The SQL learning guide could not be loaded. " + error.message;
 
         contentElement.appendChild(message);
       });

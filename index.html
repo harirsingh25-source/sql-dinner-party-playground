@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Interactive browser-based SQL dinner-party mystery for the neuefische daily review.">
+  <meta name="description" content="Interactive browser-based SQL learning experience built around a dinner-party mystery.">
   <meta name="author" content="Hari Raj Singh">
   <title>SQL Dinner-Party Mystery</title>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <header class="site-header">
-    <p class="eyebrow">neuefische · SQL Daily Review</p>
+    <p class="eyebrow">Interactive SQL Learning Experience</p>
     <h1>🍽️ SQL Dinner-Party Mystery</h1>
     <p class="subtitle">Explore four related tables, run SQL in your browser, and identify the mystery order.</p>
-    <p class="byline">Created and facilitated by Hari Raj Singh</p>
+    <p class="byline">Designed and developed by Hari Raj Singh</p>
   </header>
 
   <main>
@@ -22,7 +22,7 @@
         <h2>Your mission</h2>
         <p>Use <code>guests</code>, <code>seats</code>, <code>dishes</code>, and <code>orders</code> to discover who placed the unusual order.</p>
       </div>
-      <a class="protocol-link" href="./protocol/" target="_blank" rel="noopener noreferrer">Open participant protocol</a>
+      <a class="protocol-link" href="./protocol/" target="_blank" rel="noopener noreferrer">Open SQL learning guide</a>
     </section>
 
     <section id="presenter-controls" class="panel presenter-controls" hidden>
@@ -90,11 +90,81 @@ FROM guests;</textarea>
       <h2>Four related tables</h2>
       <div id="schema-cards" class="schema-grid"></div>
     </section>
+
+    <section class="panel learning-panel" aria-labelledby="knowledge-check-title">
+      <div class="section-heading">
+        <div>
+          <p class="step-label">Optional knowledge check</p>
+          <h2 id="knowledge-check-title">Test your SQL understanding</h2>
+        </div>
+      </div>
+
+      <p>
+        Reinforce the main SQL concepts with this short interactive Kahoot
+        activity after completing the dinner-party mystery.
+      </p>
+
+      <div class="kahoot-embed">
+        <iframe
+          src="https://embed.kahoot.it/3a7da8eb-ca20-4e61-9624-ef3904b77070"
+          title="SQL Dinner-Party Mystery knowledge check on Kahoot"
+          loading="lazy"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <p class="helper-text">
+        If the embedded activity is unavailable,
+        <a
+          href="https://create.kahoot.it/details/3a7da8eb-ca20-4e61-9624-ef3904b77070"
+          target="_blank"
+          rel="noopener noreferrer"
+        >open the Kahoot activity in a new tab</a>.
+      </p>
+    </section>
+
+    <section class="panel resources-panel" aria-labelledby="resources-title">
+      <p class="step-label">Continue learning</p>
+      <h2 id="resources-title">Guide and technical references</h2>
+
+      <ul class="resource-links">
+        <li>
+          <a href="./protocol/">SQL Dinner-Party Mystery learning guide</a>
+        </li>
+        <li>
+          <a
+            href="https://www.sqlite.org/docs.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Official SQLite documentation</a>
+        </li>
+        <li>
+          <a
+            href="https://sql.js.org/documentation/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >sql.js documentation</a>
+        </li>
+        <li>
+          <a
+            href="https://www.codecademy.com/learn/learn-sql"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Codecademy: Learn SQL</a>
+        </li>
+      </ul>
+
+      <p class="helper-text">
+        The SQL playground and learning guide remain the core experience.
+        External learning resources and the Kahoot activity are optional
+        extensions.
+      </p>
+    </section>
   </main>
 
   <footer>
     <p>Fictional educational dataset · SQLite running locally with WebAssembly</p>
-    <p class="footer-credit">Concept, design, and facilitation by Hari Raj Singh</p>
+    <p class="footer-credit">Concept, design, and development by Hari Raj Singh</p>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js"></script>

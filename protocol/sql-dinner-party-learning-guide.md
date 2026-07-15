@@ -1,10 +1,9 @@
 # 🍽️ SQL Dinner-Party Mystery
 
-**Date:** 14 July 2026<br>
-**Duration:** approximately 30 minutes<br>
-**Format:** interactive Zoom daily review<br>
-**SQL setup:** runs entirely in your browser—no database credentials or local installation required
-
+**Level:** beginner to intermediate<br>
+**Learning format:** self-guided or instructor-led<br>
+**Suggested time:** approximately 30–45 minutes<br>
+**Setup:** runs entirely in your browser—no database credentials or local installation required
 ---
 
 ## Start here
@@ -14,6 +13,13 @@
 ➡️ [Launch the Dinner-Party SQL Playground](https://harirsingh25-source.github.io/sql-dinner-party-playground/)
 
 Keep this protocol open in one browser tab and the playground open in another.
+
+### Presenter mode
+
+Facilitators can open the guided presenter version here:
+
+➡️ [Launch Presenter Mode](https://harirsingh25-source.github.io/sql-dinner-party-playground/?presenter=1)
+
 
 ### How to participate
 
@@ -706,9 +712,14 @@ The clauses are optional, but when used they must appear in this written order.
 
 ---
 
-## References
+## ## References and acknowledgements
 
-- [neuefische Intro to SQL repository](https://github.com/neuefische/ds-sql-intro)
-- [neuefische Intermediate SQL repository](https://github.com/neuefische/ds-sql-intermediate)
+
+Technical references:
+
 - [Codecademy: Learn SQL](https://www.codecademy.com/learn/learn-sql)
-- [SQLite documentation](https://www.sqlite.org/docs.html)
+- [Official SQLite documentation](https://www.sqlite.org/docs.html)
+
+The fictional dinner-party scenario, database structure, guided challenges,
+presenter workflow, and interactive learning experience were designed and
+developed by Hari Raj Singh.
